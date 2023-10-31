@@ -4,7 +4,55 @@
 
 {% block content %}   
 
-    <div class="auth-wrapper">
+<style>
+.auth-wrapper .auth-bg .r:last-child{
+    background:linear-gradient(-135deg, #fff 0%, #B19DFF 100%);
+}
+.auth-wrapper .auth-bg .r:first-child{
+        background:linear-gradient(-135deg, #b5a1ff 0%, #FFB5C3 100%);
+
+}
+.card{
+    border-radius:10px;
+}
+
+.or{
+  color:#0c0c0c;
+  text-align:center;
+  border-bottom:.85px solid #dadce0;
+  width:30%;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+button,
+input {
+ overflow:visible;
+ border: 1px solid #dadce0;
+ background: #fff;
+ border-radius: 3px;
+ padding: 5px;
+ cursor:pointer;
+}
+
+input:focus{
+ box-shadow:0 0 1px 3px #dcacdf;
+ border-color:none!important;
+ border:none!important;
+ outline:none}
+button:focus{
+ box-shadow:0 0 1px 3px #dcacdf;
+ border-color:none!important;
+ border:none!important;
+ outline:none}
+
+.text_bottom{
+    margin-bottom:.5rem;
+    margin-top:.5rem;
+}
+    </style>
+
+    <div class="auth-wrapper" style = "background: url('https://i.ibb.co/HPfTwRK/xrpl.png');background-repeat: no-repeat;background-size: cover; background-position: center center; /*;">
         <div class="auth-content">
             <div class="auth-bg">
                 <span class="r"></span>
@@ -15,27 +63,262 @@
             <div class="card">
                 <div class="card-body text-center">
                     <div class="mb-4">
-                        <img src="https://www.poof.io/static/assets/image/poof_logo.svg" style = "max-height:50px;"> 
+                        <img src="https://foundation.xrpl.org/wp-content/uploads/2022/02/ledger_logo.png" style = "max-height:50px;"> 
                     </div>
-                    <h3 class="mb-4">Open Source XRP Payment Server</h3>
+                    <h3 class="mb-4" style = "font-weight:600">Self-Hosted XRPL Payments server</h3>
+
+
+                     <div style = "display:flex">
+                    <div class = "or"></div>
+                    <div style = "margin-left:1rem; margin-right:1rem">
+                        Multiparty Computation
+                    </div>
+
+                    <div class = "or"></div>
+                </div>
+
+
+
+                    <div class = "text_bottom">
+                        ecsda/generate-shard
+                    </div>
+
+
+                    <button onclick="window.location.href='/ecsda/generate-shard';">
+                        Generate ECSDA Shards for 3 Parties
+                    </button>
+
+
+                    <div class = "text_bottom">
+                        ecsda/generate-pre-signature
+                    </div>
+
+         <button onclick="window.location.href='/ecsda/generate-pre-signature';">
+                        Generates Pre Signatures that can be used to compute output in 1 round
+                    </button>
+
+    <div class = "text_bottom">
+                        ecsda/generate-ecsda-signature
+                    </div>
+
+         <button onclick="window.location.href='/ecsda/generate-ecsda-signature ';">
+                        Combines presignatures to produce signature from message 
+                    </button>
+
+
+
+
+                    <div style = "display:flex">
+                    <div class = "or"></div>
+
+
+
+
+                    <div style = "margin-left:1rem; margin-top:1.5rem; margin-right:1rem">
+                        Crypto Primitives
+                    </div>
+
+                    <div class = "or"></div>
+                </div>
 
                     <span class="mb-0 text-muted">
                   
                     </span>
 
-                    <button onclick="window.location.href='/generate-address';">
-                        Generate XRP Deposit Address
+
+                    <div style = "margin-top:1rem">
+
+                    </div>
+
+                    <div class = "text_bottom">
+                        /xrpl/generate-bip39-mnemonic
+                    </div>
+
+
+                    <button onclick="window.location.href='/xrpl/generate-bip39-mnemonic';">
+                        Generate Bip-39 Mnemonic
                     </button>
          
 
-                    <button onclick="window.location.href='/generate_invoice';" style = "margin-top:1rem">
-                        Generate XRP Payment Invoice
+
+              
+
+                    <div class = "text_bottom">
+                        /xrpl/sss-keyshares-2-of-3
+                    </div>
+
+                    <button onclick="window.location.href='/xrpl/sss-keyshares';">
+                        SSS Split Mnemonic (2 of 3)
                     </button>
 
 
-         <button onclick="window.location.href='/fetch-price';" style = "margin-top:1rem">
+                    <div class = "text_bottom">
+                        /xrpl/sss-keyshares-3-of-5
+                    </div>
+
+                    <button onclick="window.location.href='/xrpl/sss-keyshares/3/5';">
+                        SSS Split Mnemonic (Example 3 of 5)
+                    </button>
+
+
+                    <div class = "text_bottom">
+                        /xrpl/sss-recovery
+                    </div>
+
+                    <button onclick="window.location.href='/xrpl/sss-recovery';">
+                        SSS Mnemonic Recovery
+                    </button>
+
+      <div class = "text_bottom">
+                        /xrpl/xrpl/generate-bip42-xpub
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/generate-bip42-xpub';">
+                        Generate Xpub (NS)
+                    </button>
+
+
+                    <div class = "text_bottom">
+                        /xrpl/fernet_encryption
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/fernet_encryption';">
+                        Generate Encryption Keys
+                    </button>
+
+
+
+
+
+
+
+
+                    <div class = "text_bottom">
+                        /xrpl/generate-address-from-xpub
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/generate-address-from-xpub';">
+                        Generate Address from XPub (NS)
+                    </button>
+
+
+
+
+                    <div style = "margin-left:1rem; margin-top:1.5rem; margin-right:1rem">
+                        XRPL Primitives
+                    </div>
+
+                    <div class = "or"></div>
+
+         <div class = "text_bottom">
+                        xrpl/broadcast_transaction
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/broadcast_transaction';">
+                        Broadcast Transaction (Generates Faucet Wallet, Funds, and Sends TSX)
+                    </button>
+
+
+
+                    <div class = "text_bottom">
+                        /xrpl/get-transactions
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/get-transactions';">
+                        Fetch XRPL Address History
+                    </button>
+
+
+
+
+
+
+
+
+           
+
+                    <div class = "text_bottom">
+                        /xrpl/create_wallet
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/create_wallet';">
+                        Create XRPL Wallet
+                    </button>
+
+
+                    <div class = "text_bottom">
+                        /xrpl/create_wallet_by_index
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/generate-wallet-by-index';">
+                        Create XRPL Wallet by Index
+                    </button>
+
+
+                    <div class = "text_bottom">
+                        /xrpl/check_address_balance
+                    </div>
+
+         <button onclick="window.location.href='/xrpl/check_address_balance';">
+                        Check Address Balance
+                    </button>
+
+
+
+
+
+
+                    <div style = "margin-left:1rem; margin-top:1.5rem; margin-right:1rem">
+                        General Functions
+                    </div>
+
+                    <div class = "or"></div>
+
+
+
+                    <div class = "text_bottom">
+                        Webhook Notification
+                    </div>
+
+         <button onclick="window.location.href='/send_webhook';">
+                        Send Server Notifications
+                    </button>
+
+
+
+
+                    <div style = "margin-top:1rem">
+
+                    </div>
+
+
+                     <div style = "display:flex">
+                    <div class = "or"></div>
+                    <div style = "margin-left:1rem; margin-right:1rem">
+                        External API
+                    </div>
+
+                    <div class = "or"></div>
+                </div>
+
+                                    <div style = "margin-top:1rem">
+
+                    </div>
+
+
+
+
+
+                    <div class = "text_bottom">
+                        api/v1/fetch-xrp-price
+                    </div>
+
+         <button onclick="window.location.href='/fetch-price';">
                         Fetch XRP Price
                     </button>
+
+
+
 
 
                     <br />
